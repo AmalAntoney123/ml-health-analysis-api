@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
 from ml_health import HealthPredictor
 import numpy as np
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 predictor = HealthPredictor()
 
 # Initialize the model when starting the server
